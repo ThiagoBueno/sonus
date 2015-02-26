@@ -644,6 +644,9 @@ class Sonus
      */
     public static function destroyProgress($job) 
     {
+        // Get the temporary directory
+        $tmpdir = self::getTempPath();
+        
         // Get temporary file path
         $file = $tmpdir.$job.'.sonustmp';
 
@@ -664,6 +667,9 @@ class Sonus
      */
     public static function destroyAllProgress()
     {
+        // Get the temporary directory
+        $tmpdir = self::getTempPath();
+        
         // Get all filenames within the temporary folder
         $files = glob($tmpdir.'*');
 
